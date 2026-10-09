@@ -1,0 +1,33 @@
+# Android is built by Gradle, not deployed via Docker. If a build container is
+# added later, do not send local state, signing material or device laboratories.
+.git
+.idea
+**/.gradle
+**/build
+**/.cxx
+**/.externalNativeBuild
+**/__pycache__
+**/src/test
+**/src/androidTest
+**/src/debug
+mochi-input-lab
+enter-parity-lab
+investigation
+images
+fastlane
+fdroid
+tools/enter_parity/results
+dist
+release-private
+**/local.properties
+**/.env*
+**/*.jks
+**/*.keystore
+**/*.p12
+**/*.pem
+**/*.key
+**/*.apk
+**/*.aab
+**/*.log
+**/*.tmp
+**/*.hprof

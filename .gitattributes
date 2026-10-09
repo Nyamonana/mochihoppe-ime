@@ -1,0 +1,5 @@
+# Preserve the reviewed runtime-asset bytes across Windows/Linux checkouts.
+app/src/main/assets/** -text
+*.zip -text
+*.jar -text
+*.dat -text

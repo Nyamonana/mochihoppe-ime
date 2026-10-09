@@ -1,0 +1,30 @@
+name: Mochi local-equivalent verification (no publication)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: temurin
+      - uses: android-actions/setup-android@v4
+      - run: chmod +x gradlew
+      - run: ./gradlew :app:assembleLiteStandardDebug :app:testLiteStandardDebugUnitTest --tests 'com.kazumaproject.markdownhelperkeyboard.mochi.*' :mochi-input-lab:assembleDebug --no-daemon
+      - run: ./gradlew :app:testLiteStandardDebugUnitTest --tests 'com.kazumaproject.markdownhelperkeyboard.ime_service.FloatingDictionaryInputTargetTest' :app:assembleLiteStandardReleaseUnsigned --no-daemon
+      - run: python3 -m unittest discover -s tools -p test_mochi_release_audit.py
+      - name: Audit production-equivalent APK (do not publish unsigned output)
+        shell: bash
+        run: |
+          apk=$(find app/build/outputs/apk/liteStandard/releaseUnsigned -name '*.apk' -print -quit)
+          manifest=$(find app/build/intermediates/merged_manifests/liteStandardReleaseUnsigned -name AndroidManifest.xml -print -quit)
+          python3 tools/mochi_release_audit.py --check-push --apk "$apk" --manifest "$manifest"
+      # No release signing, artifact upload, tag trigger, GitHub release, or store publication.
+      # Publication requires an explicit owner-authorized release, never this workflow.

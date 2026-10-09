@@ -1,0 +1,22 @@
+diff --git a/build.gradle.kts b/build.gradle.kts
+index b2e60fa..62d2925 100644
+--- a/build.gradle.kts
++++ b/build.gradle.kts
+@@ -696,7 +696,7 @@ tasks.register<Test>("updateDictionaryBuildBaseline") {
+ }
+ 
+ kotlin {
+-    jvmToolchain(17)
++    jvmToolchain(21)
+     sourceSets.main {
+         kotlin.srcDir(generatedMozcIdDefDir)
+     }
+@@ -718,7 +718,7 @@ tasks.named("check") {
+ }
+ 
+ application {
+-    mainClass.set("com.kazumaproject.MainKt")
++    mainClass.set("com.kazumaproject.MochiDictionaryBuildKt")
+ }
+ 
+ tasks.named<JavaExec>("run") {
