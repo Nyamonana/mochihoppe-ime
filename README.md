@@ -1,24 +1,35 @@
-# もちエクIME — Sumire派生版 本アプリは、以下のオープンソースプロジェクトを元に改変したものです。
+# もちエクIME — Sumire派生版 (本アプリは、以下のオープンソースプロジェクトを元に改変したものです。)
 
 Original: [Sumire (スミレ)](https://github.com/kazumaproject/japanesekeyboard)
+
 Google Play: [スミレ - 完全オフラインの日本語キーボードアプリ](https://play.google.com/store/apps/details?id=com.kazumaproject.markdownhelperkeyboard&hl=ja)
+
 Modified by: Nyamonana
 
 <img width="1080" height="997" alt="Screenshot_2026-10-10-05-01-02-722_jp co airfront android a2chMate haiagaru-edit" src="https://github.com/user-attachments/assets/59d4f49d-4a1f-4f27-9044-f1bd80945c5e" />
 
 
 [Sumire (スミレ)](https://github.com/kazumaproject/japanesekeyboard)をベースに、もちエク画像の検索機能を追加した改変版IMEです。 
+
 [APKダウンロード（GitHub Releases）](https://github.com/Nyamonana/mochihoppe-ime/releases/latest) · Android 7.0以上。
 
 本アプリは、オリジナル版のプライバシーを重視した設計を引き継いでいます。
+
 オリジナル版はインターネット接続を必要としない完全オフラインのIMEですが、本アプリでは画像検索機能を追加しているため、一部の機能でインターネット通信が発生します。
+
 ただし、通常の文字入力や変換処理はオリジナル版と同様にデバイス内で完結しており、入力内容を変換のために外部サーバーへ送信することはありません。
+
 インターネット通信は画像の検索・取得のみに使用されます。
 
 完全オフラインではありませんが、文字入力に関するプライバシーを保護する設計は維持しています。
 
 画像検索機能以外の仕様については、以下の改変元（上流プロジェクト）のREADMEをご参照ください。
+
+
 以下は、出典および原文の記録として保持している上流プロジェクトのREADMEです。記載されているアプリ名、ストアへのリンク、および完全オフライン動作に関する説明は、本フォークには適用されません。
+
+
+------
 
 
 # 以下、上流プロジェクトのREADME
